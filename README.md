@@ -8,21 +8,21 @@ Hallo, hier finden Sie meine Backend Anleitung [documentation_Backend](https://c
 
 hier sind ein paar Screenschots wie meine Webseite aussehen sollte :
 
-home page:
-![Alt text](image.png)
+[home page](https://code.fbi.h-da.de/styamouss/fwe_yacer-moussa_1115923_ss2024/-/blob/main/home.png?ref_type=heads)
 
-wenn Sie auf "Reise verwalten" drücken :
 
-![Alt text](image-1.png)
+wenn Sie auf [Reise verwalten](https://code.fbi.h-da.de/styamouss/fwe_yacer-moussa_1115923_ss2024/-/blob/main/Reise_verwalten.png?ref_type=heads) drücken :
 
-wenn Sie auf "Reiseziel verwalten" drücken :
 
-![Alt text](image-2.png)
 
-wenn Sie auf "Stadtinfo anzeigen" drücken :
+wenn Sie auf [Reiseziel verwalten](https://code.fbi.h-da.de/styamouss/fwe_yacer-moussa_1115923_ss2024/-/blob/main/Reiseziel_verwalten.png?ref_type=heads) drücken :
 
-![Alt text](image-3.png)
 
-wenn Sie auf "Alle Reisen schauen" drücken :
 
-![Alt text](image-4.png)
+wenn Sie auf [Stadtinfo anzeigen](https://code.fbi.h-da.de/styamouss/fwe_yacer-moussa_1115923_ss2024/-/blob/main/StadtInfos_externelAPI.png?ref_type=heads) drücken :
+
+
+
+wenn Sie auf [Alle Reisen schauen](https://code.fbi.h-da.de/styamouss/fwe_yacer-moussa_1115923_ss2024/-/blob/main/alle_Reisen_Anschauen.png?ref_type=heads) drücken :
+
+
