@@ -1,11 +1,15 @@
-// create_Reiseziel.ts
 import express from "express";
 import { Reiseziel } from "../Reiseziel";
 import { Reise } from "../Reise";
 
 const router = express.Router();
 
-router.post ('/api/Reiseziel', async (req, res) => {
+// Liste der gültigen deutschen Monatswochennamen
+const validWeeks = [
+    'erste woche', 'zweite woche', 'dritte woche', 'vierte woche'
+];
+
+router.post('/api/Reiseziel', async (req, res) => {
     const {
         name,
         zeitraum,
@@ -15,9 +19,18 @@ router.post ('/api/Reiseziel', async (req, res) => {
         reisen // Array von Reise-IDs, zu denen das Reiseziel gehört
     } = req.body;
 
-    // Überprüfen, ob Reise-IDs vorhanden sind
-    if (!Array.isArray(reisen) || reisen.length === 0) {
-        return res.status(400).json({ msg: 'Mindestens eine Reise-ID muss angegeben werden.' });
+    // Überprüfen, ob alle erforderlichen Felder vorhanden sind
+    if (!name || !zeitraum || !beschreibung || !aktivitaeten || !fotos || !Array.isArray(reisen) || reisen.length === 0) {
+        return res.status(400).json({ 
+            msg: 'Fehler: Alle Felder (name, zeitraum, beschreibung, aktivitaeten, fotos, reisen) sind erforderlich und mindestens eine Reise-ID muss angegeben werden.' 
+        });
+    }
+
+    // Validierung: Überprüfen, ob der zeitraum ein gültiger Monatswochenname ist
+    if (!validWeeks.includes(zeitraum.toLowerCase())) {
+        return res.status(400).json({ 
+            msg: 'Fehler: Der zeitraum muss ein gültiger Monatswochenname sein (z.B. erste woche, zweite woche, dritte woche, vierte woche).' 
+        });
     }
 
     try {

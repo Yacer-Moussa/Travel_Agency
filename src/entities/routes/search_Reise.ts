@@ -8,13 +8,27 @@ router.get('/api/Reisen/search', async (req, res) => {
     const { name, reisezeitraum } = req.query;
 
     try {
-        // Suche nach Reisen basierend auf dem Namen oder dem Reisezeitraum
-        const reisen = await Reise.find({
-            where: [
-                { name: Like(`%${name}%`) }, // Suche nach dem Namen
-                { reisezeitraum: Like(`%${reisezeitraum}%`) } // Suche nach dem Reisezeitraum
-            ]
-        });
+        // Konvertiere die Suchbegriffe in Kleinbuchstaben
+        const lowerName = name ? (name as string).toLowerCase() : null;
+        const lowerReisezeitraum = reisezeitraum ? (reisezeitraum as string).toLowerCase() : null;
+
+        let reisen;
+        if (lowerName && lowerReisezeitraum) {
+            reisen = await Reise.createQueryBuilder("reise")
+                .where("LOWER(reise.name) LIKE :name", { name: `%${lowerName}%` })
+                .andWhere("LOWER(reise.reisezeitraum) LIKE :reisezeitraum", { reisezeitraum: `%${lowerReisezeitraum}%` })
+                .getMany();
+        } else if (lowerName) {
+            reisen = await Reise.createQueryBuilder("reise")
+                .where("LOWER(reise.name) LIKE :name", { name: `%${lowerName}%` })
+                .getMany();
+        } else if (lowerReisezeitraum) {
+            reisen = await Reise.createQueryBuilder("reise")
+                .where("LOWER(reise.reisezeitraum) LIKE :reisezeitraum", { reisezeitraum: `%${lowerReisezeitraum}%` })
+                .getMany();
+        } else {
+            reisen = await Reise.find();
+        }
 
         return res.json(reisen);
     } catch (error) {

@@ -1,0 +1,145 @@
+/* src/pages/CreateReise.css */
+
+/* Allgemeines Styling für den gesamten Container */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #fff;
+  margin-bottom: 8px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+li p {
+  margin: 0 0 8px;
+  color: #333;
+}
+
+.delete-button,
+.view-button,
+.download-button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-right: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.view-button {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+}
+
+.download-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.view-button:hover {
+  background-color: #138496;
+}
+
+.download-button:hover {
+  background-color: #218838;
+}
+
+.reiseziele-container {
+  margin-top: 32px;
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.reiseziele-container h2 {
+  color: #333;
+}
+
+.reiseziele-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.reiseziele-container li {
+  background-color: #f9f9f9;
+  margin-bottom: 8px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.reiseziele-container li p {
+  margin: 0;
+  color: #333;
+}

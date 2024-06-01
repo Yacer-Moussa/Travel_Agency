@@ -1,5 +1,6 @@
 import { createConnection } from 'typeorm';
 import express from 'express';
+import cors from 'cors';
 import { Reise} from './entities/Reise';
 import { Reiseziel } from './entities/Reiseziel';
 import { createReiseRouter } from './entities/routes/create_Reise';
@@ -14,9 +15,11 @@ import { cityInfoRouter } from './entities/routes/externe_API';
 import { updateReisezielRouter } from './entities/routes/update_Reise';
 import { updateReiseRouter } from './entities/routes/update_Reiseziel';
 import { getReisezieleByReiseRouter } from './entities/routes/get_Reiseziele_einerReise';
+import { exportReiseToCSVRouter } from './entities/routes/exportReiseToCSV';
 
 const app = express();
-
+app.use(cors()); 
+app.use(express.json());
 const main = async () => {
 	try {
 		await createConnection({
@@ -43,6 +46,7 @@ const main = async () => {
 		app.use(updateReisezielRouter)
 		app.use(updateReiseRouter)
 		app.use(getReisezieleByReiseRouter)
+		app.use(exportReiseToCSVRouter)
 
         app.listen(8080, () => {
 			console.log('Now running on port 8080');
